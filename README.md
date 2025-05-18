@@ -30,7 +30,7 @@
   - [MVP 범위 (최소 기능 제품)](#mvp-범위-최소-기능-제품)
   - [기술 스택 (예정)](#기술-스택-예정)
   - [프로젝트 구조 (초기 예시)](#프로젝트-구조-초기-예시)
-  - [로컬 실행 (개발용)](#로컬-실행-개발용)
+  - [실행 방법](#실행-방법)
   - [로드맵 (High-Level)](#로드맵-high-level)
   - [기여 방법](#기여-방법)
   - [라이선스 \& 오픈소스 철학 ](#라이선스--오픈소스-철학-)
@@ -132,12 +132,28 @@ seorogil/
 
 ---
 
-## 로컬 실행 (개발용)
+## 실행 방법
 
 로컬에서 돌려보려면 이렇게 하면 됩니다.
 
-```sh
-# 추후 업데이트 해드리겠습니다...!
+**개발 환경 실행**:
+
+```bash
+docker-compose up
+```
+
+또는
+
+```bash
+docker build -t seoro-gil-dev -f docker/Dockerfile.dev .
+docker run -p 3000:3000 seoro-gil-dev
+```
+
+**배포 환경 실행**:
+
+```bash
+docker build -t seoro-gil-prod -f docker/Dockerfile.prod .
+docker run -p 3000:3000 seoro-gil-prod
 ```
 
 ---
@@ -158,7 +174,7 @@ seorogil/
 혼자 개발하다 보니 부족한 점이 많습니다. 언제든지 도와주세요!
 
 1. Issue나 Discussion에 자유롭게 의견이나 버그 남겨주세요.
-2. feat/, fix/ 브랜치로 PR 보내주세요. (PR 규칙은 곧 CONTRIBUTING.md에 정리할 예정입니다.)
+2. [CONTRIBUTING.md](./CONTRIBUTING.md)의 PR 규칙을 참고하여 PR을 보내주세요.
 3. 코드 리뷰 후 병합합니다.
 
 > **코드 기여 시 동의 사항**  

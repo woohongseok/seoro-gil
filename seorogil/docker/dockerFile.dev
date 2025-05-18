@@ -1,0 +1,20 @@
+FROM node:23-alpine
+
+WORKDIR /app
+
+# 개발 종속성 포함 설치
+COPY package*.json ./
+RUN npm install
+
+# Prisma 설정
+COPY prisma ./prisma/
+RUN npx prisma generate
+
+# 소스 코드 복사
+COPY . .
+
+# 개발 서버 포트
+EXPOSE 3000
+
+# 개발 서버 실행
+CMD ["npm", "run", "dev"]
